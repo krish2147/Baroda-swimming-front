@@ -49,15 +49,29 @@
       max-width: 90%;
       max-height: 80%;
     }
-    .close {
+    .close, .prev, .next {
       position: absolute;
-      top: 20px;
-      right: 40px;
+      top: 50%;
       color: white;
       font-size: 40px;
+      font-weight: bold;
       cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      transform: translateY(-50%);
     }
-    header {
+    .close {
+      top: 20px;
+      right: 40px;
+      font-size: 50px;
+    }
+    .prev {
+      left: 5%;
+    }
+    .next {
+      right: 5%;
+    }
+     header {
       background: linear-gradient(to right, #0077b6, #00b4d8);
       color: white;
       text-align: center;
@@ -104,25 +118,44 @@
   <h1>Gallery</h1>
 
   <div class="gallery">
-    <img src="swim6.jpeg" alt="Swimming Pool" onclick="openLightbox(this)">
-    <img src="swim5.jpg" alt="Swimming Training" onclick="openLightbox(this)">
-    <img src="swim4.webp" alt="Swimming Lessons" onclick="openLightbox(this)">
+    <img src="images/swim.jpeg" alt="Swimming Pool" onclick="openLightbox(0)">
+    <img src="images/swim2.jpeg" alt="Swimming Training" onclick="openLightbox(1)">
+    <img src="images/swim3.webp" alt="Swimming Lessons" onclick="openLightbox(2)">
   </div>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
     <img id="lightbox-img" src="">
+    <span class="next" onclick="changeSlide(1)">&#10095;</span>
   </div>
 
   <script>
-    function openLightbox(img) {
+    let currentIndex = 0;
+    const images = [
+      "images/swim.jpeg",
+      "images/swim2.jpeg",
+      "images/swim3.webp"
+    ];
+
+    function openLightbox(index) {
+      currentIndex = index;
       document.getElementById("lightbox").style.display = "block";
-      document.getElementById("lightbox-img").src = img.src;
+      document.getElementById("lightbox-img").src = images[currentIndex];
     }
+
     function closeLightbox() {
       document.getElementById("lightbox").style.display = "none";
     }
+
+    function changeSlide(n) {
+      currentIndex += n;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      document.getElementById("lightbox-img").src = images[currentIndex];
+    }
   </script>
+
 </body>
 </html>
