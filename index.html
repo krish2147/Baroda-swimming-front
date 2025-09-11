@@ -3,188 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Basic SEO -->
-  <title>Baroda Swimming Front | Swimming Classes in Vadodara</title>
-  <meta name="description" content="Join Baroda Swimming Front in Vadodara. Professional swimming classes for kids, beginners, and advanced swimmers with expert coaching.">
-  <meta name="keywords" content="Baroda Swimming Front, swimming classes Vadodara, learn swimming, swimming training, swim academy Gujarat">
-
-  <!-- OpenGraph (Facebook, WhatsApp, Instagram) -->
-  <meta property="og:title" content="Baroda Swimming Front | Vadodara">
-  <meta property="og:description" content="Learn to swim with confidence! Kids, beginners, and advanced swimming classes in Vadodara.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1505842465776-3d4f03a06f7a">
-  <meta property="og:url" content="https://krish2147.github.io/baroda-swimming-front/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Baroda Swimming Front | Vadodara">
-  <meta name="twitter:description" content="Join Baroda Swimming Front for kids, beginners, and advanced swimming classes in Vadodara.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1505842465776-3d4f03a06f7a">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Swimming_font_awesome.svg/512px-Swimming_font_awesome.svg.png">
+  <title>Baroda Swimming Front</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    nav ul li a.active {
+  background: #005f87;
+  font-weight: bold;
+  border-radius: 4px;
+}
+/* Sticky shadow */
+nav.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+    /* Navbar styles */
+nav {
+  background: #0077b6;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+.logo {
+  color: white;
+  margin: 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 12px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  background: #005f87;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #0077b6;
+    text-align: center;
+  }
+  nav ul li {
+    margin: 12px 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav ul.show {
+    display: flex;
+  }
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f0f9ff;
-      color: #00334d;
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
     }
-    header {
-      background: linear-gradient(to right, #0077b6, #00b4d8);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
+    /* Navbar */
     nav {
-      background: #0096c7;
-      padding: 0.5rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #0077b6;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin-left: 15px;
       font-weight: bold;
     }
     nav a:hover {
       text-decoration: underline;
     }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .home h2,.about h2  {
+
+    /* Hero Section */
+    .hero {
+      background: url('images/swim.jpeg') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: rgb(43, 37, 109);
       text-align: center;
-      margin: 2rem 0;
-      margin: 0;
-      font-size: 2.5rem;
+      padding: 20px;
     }
-    table,img{
-        margin: auto;
-        border-radius: 10px;
-        text-align: center;
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
-        .classes {
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ffba08;
+      color: black;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #f48c06;
+      color: rgb(241, 235, 235);
+    }
+
+    /* Why Choose Us */
+    .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      gap: 20px;
+      padding: 50px 20px;
       text-align: center;
+      background: white;
     }
-    .card h3 {
-      margin-top: 0;
+    .feature {
+      background: #e9f5ff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .feature i {
+      font-size: 40px;
       color: #0077b6;
+      margin-bottom: 15px;
     }
+
+    /* Quick Links */
+    .quick-links {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .quick-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: #0077b6;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .quick-links a:hover {
+      background: #005f87;
+    }
+
+    /* Footer */
     footer {
-      background: #00334d;
+      background: #0077b6;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 20px;
+      margin-top: 30px;
     }
-  .responsive-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-    border-radius: 8px; /* optional for rounded corners */
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  td {
-    text-align: center;
-    padding: 10px;
-  }
+    footer a {
+      color: #ffba08;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Baroda Swim Front</h1>
-    <p>Learn to Swim with Confidence in Vadodara 🏊</p>
-  </header>
 
+  <!-- Navbar -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#classes">Classes</a>
-    <a href="#contact">Contact</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
+  <div class="nav-container">
+    <h2 class="logo">Baroda Swimming Front</h2>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+  <li><a href="index.html" class="nav-link">Home</a></li>
+  <li><a href="about.html" class="nav-link">About Us</a></li>
+  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+  <li><a href="fees.html" class="nav-link">Fees</a></li>
+  <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+  <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <section>
-    <table>
-        <tr>
-            <td rowspan="3">
-                <img src="swim.jpeg" alt="Swimming Pool" class="responsive-img">
-            </td>
-        </tr> 
-        <tr>
-            <td>
-                <img src="swim2.jpeg" alt="Swimming Training" class="responsive-img">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="swim3.webp" alt="Swimming Lessons" class="responsive-img">
-            </td>
-        </tr>
-    </table>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Baroda Swimming Front</h1>
+    <p>Learn to swim with confidence, safety, and fun!</p>
+    <a href="contact.html" class="btn">Join Now</a>
   </section>
-    <section  id="home">
-      <h2>Welcome to Baroda Swimming Front</h2>
-         <p>Your journey to becoming a confident swimmer starts here! We offer specialized swimming classes for kids, beginners, and advanced swimmers in Vadodara.</p>
-    </section>
-    <section  id="about">
-      <h2>About Us</h2>
-        <p>Welcome to Baroda Swimming Front! Whether you're a beginner, a kid, or looking to improve your strokes, we provide professional coaching in a safe and friendly environment.</p>
-    </section>
-  <section id="classes">
-    <h2>Our Classes</h2>
-    <div class="classes">
-      <div class="card">
-        <h3>Kids Batch</h3>
-        <p>Fun and safe swimming classes for children (ages 5-12).</p>
-      </div>
-      <div class="card">
-        <h3>Beginners</h3>
-        <p>Step-by-step guidance for those new to swimming.</p>
-      </div>
-      <div class="card">
-        <h3>Advanced</h3>
-        <p>Improve your technique and stamina with expert training.</p>
-      </div>
+
+  <!-- Why Choose Us -->
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-user-shield"></i>
+      <h3>Certified Coaches</h3>
+      <p>Learn from experienced and certified swimming trainers.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-child"></i>
+      <h3>All Age Groups</h3>
+      <p>Special programs for kids, adults, and advanced swimmers.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-heartbeat"></i>
+      <h3>Health & Fitness</h3>
+      <p>Swimming improves stamina, flexibility, and overall fitness.</p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: +91-9876543210</p>
-    <p>📍 Location: Vadodara, Gujarat</p>
-    <p>📧 Email: barodaswimmingfront@gmail.com</p>
+  <!-- Quick Links -->
+  <section class="quick-links">
+    <h2>Explore More</h2>
+    <a href="fees.html">View Fees</a>
+    <a href="schedule.html">Class Schedule</a>
+    <a href="contact.html">Contact Us</a>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>©️ 2025 Baroda Swim Front | All Rights Reserved</p>
+    <p>©️ 2025 Baroda Swimming Front | All Rights Reserved</p>
+    <p>
+      <a href="https://wa.me/919876543210" target="_blank">WhatsApp</a> |
+      <a href="https://instagram.com/yourusername" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
+    </p>
   </footer>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
+// Highlight current page
+const links = document.querySelectorAll(".nav-link");
+const currentPage = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+  if(link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
 </body>
 </html>
