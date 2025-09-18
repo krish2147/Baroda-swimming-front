@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - Baroda Swimming Front</title>
   <style>
-       nav ul li a.active {
+          nav ul li a.active {
   background: #005f87;
   font-weight: bold;
   border-radius: 4px;
@@ -88,115 +88,13 @@ nav ul li a:hover {
       padding: 0;
       text-align: center;
     }
-    h1 {
-      padding: 20px;
-      background: #0077b6;
-      color: white;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 50px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-    }
-    .lightbox img {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80%;
-    }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
     header {
-      background: linear-gradient(to right, #0077b6, #00b4d8);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+      background: cyan;
+      color: rgb(10, 9, 9);
+      padding: 15px;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <nav>
-  <div class="nav-container">
-    <h2 class="logo">Baroda Swimming Front</h2>
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <ul id="menu">
-  <li><a href="index.html" class="nav-link">Home</a></li>
-  <li><a href="about.html" class="nav-link">About Us</a></li>
-  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-  <li><a href="fees.html" class="nav-link">Fees</a></li>
-  <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-  <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-    </ul>
-  </div>
-</nav>
-  <h1>Gallery</h1>
-
-  <div class="gallery">
-    <img src="swim6.jpeg" alt="Swimming Pool" onclick="openLightbox(this)">
-    <img src="swim5.jpg" alt="Swimming Training" onclick="openLightbox(this)">
-    <img src="swim4.webp" alt="Swimming Lessons" onclick="openLightbox(this)">
-  </div>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="">
-  </div>
-
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Baroda Swimming Front</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    h1 {
-      padding: 20px;
     }
     .gallery {
       display: grid;
@@ -258,12 +156,30 @@ nav ul li a:hover {
   </style>
 </head>
 <body>
-  <h1>Gallery</h1>
+     <!-- Navbar -->
+  <nav>
+  <div class="nav-container">
+    <h2 class="logo">Baroda Swimming Front</h2>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+  <li><a href="index.html" class="nav-link">Home</a></li>
+  <li><a href="about.html" class="nav-link">About Us</a></li>
+  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+  <li><a href="fees.html" class="nav-link">Fees</a></li>
+  <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+  <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+    <h1>Gallery</h1>
+</header>
+
 
   <div class="gallery">
-    <img src="images/swim.jpeg" alt="Swimming Pool" onclick="openLightbox(0)">
-    <img src="images/swim2.jpeg" alt="Swimming Training" onclick="openLightbox(1)">
-    <img src="images/swim3.webp" alt="Swimming Lessons" onclick="openLightbox(2)">
+    <img src="swim.jpeg" alt="Swimming Pool" onclick="openLightbox(0)">
+    <img src="swim2.jpeg" alt="Swimming Training" onclick="openLightbox(1)">
+    <img src="swim3.webp" alt="Swimming Lessons" onclick="openLightbox(2)">
   </div>
 
   <!-- Lightbox -->
@@ -277,9 +193,9 @@ nav ul li a:hover {
   <script>
     let currentIndex = 0;
     const images = [
-      "images/swim.jpeg",
-      "images/swim2.jpeg",
-      "images/swim3.webp"
+      "swim.jpeg",
+      "swim2.jpeg",
+      "swim3.webp"
     ];
 
     function openLightbox(index) {
@@ -298,13 +214,7 @@ nav ul li a:hover {
       if (currentIndex >= images.length) currentIndex = 0;
       document.getElementById("lightbox-img").src = images[currentIndex];
     }
-  </script>
-  <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("show");
-}
-
-// Highlight current page
+    // Highlight current page
 const links = document.querySelectorAll(".nav-link");
 const currentPage = window.location.pathname.split("/").pop();
 
@@ -313,6 +223,7 @@ links.forEach(link => {
     link.classList.add("active");
   }
 });
-</script>
+  </script>
+
 </body>
 </html>
