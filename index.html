@@ -95,8 +95,8 @@ nav ul li a:hover {
       text-align: center;
     }
     header {
-      background: #0077b6;
-      color: white;
+      background: cyan;
+      color: rgb(10, 9, 9);
       padding: 15px;
     }
     header h1 {
@@ -223,12 +223,43 @@ nav ul li a:hover {
             clip-path: inset(0 0 0 0);
       }
     }
-       h3 , .quick-links a , .feature ,  .btn {
+       h3 , .quick-links a , .feature  {
       animation: appear 5s linear;
       animation-timeline: view();
       animation-range: entry 0% cover 40%;
      }
-     
+      /* Typing effect */
+    .typing {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(20, end) forwards;
+    }
+
+    .subtyping {
+      font-size: 20px;
+      font-style: italic;
+      color: rgb(253, 250, 250);
+      margin-bottom: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing2 3s steps(20, end) forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes typing2 {
+      from { width: 0 }
+      to { width: 100% }
+    }
   </style>
 </head>
 <body>
@@ -282,7 +313,7 @@ nav ul li a:hover {
 
   <!-- Quick Links -->
   <section class="quick-links">
-    <h3>Explore More</h3>
+    <h3 style="color: #333;">Explore More</h3>
     <a href="fees.html">View Fees</a>
     <a href="schedule.html">Class Schedule</a>
     <a href="contact.html">Contact Us</a>
